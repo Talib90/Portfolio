@@ -1,0 +1,115 @@
+button,input { outline: none;  }
+.popular-container{
+    padding:10px;
+}
+button:hover{
+    -moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+}
+.popular_img {
+    max-height: 100px;
+    max-width: 100px;
+    position: relative;
+    display: inline-block;
+}
+.popular_butoon{
+    width: 100%;
+}
+.replyMessage {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 15px;
+    max-width: 500px;
+    min-width: 100px;
+    word-break: break-word;
+    max-height: 85px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 21px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.info-widget {
+    width: 33.33%;
+    display: inline-block;
+    height:200px;
+    padding:5px;
+  }
+
+.middle {
+    float: left;
+    width: 100%;
+    overflow: auto;
+    /*will change this to hidden later to deny scolling to user*/
+    white-space: nowrap;
+}
+.middle::-webkit-scrollbar { 
+    display: none; 
+}
+.button-mall{
+    height: 100px;
+    position: absolute;
+    top:60px;
+    background: #ffffff;
+    -moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+    z-index: 99999;
+}
+.button-mall:hover{
+    -moz-box-shadow: 0 0 10px #272727;
+	-webkit-box-shadow: 0 0 10px #272727;
+	box-shadow: 0 0 10px #272727;
+}
+.img_mall {
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+}
+.btn-product,.btn-shop{
+    width: 100%;
+    height: 100%;
+    margin:0px;
+    padding:0px;
+}
+.no-padding{
+    padding: 0px;
+}
+.img_product{
+    width: 150px;
+    height: 150px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.title_product{
+    width: 100%;
+    padding:5px;
+    max-width: 500px;
+    min-width: 100px;
+    max-height: 85px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 21px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .popular_img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+    .info-widget {
+        width: 100%;
+    }
+    .button-mall{
+        height: 50px;
+        top:80px;
+    }
+  }

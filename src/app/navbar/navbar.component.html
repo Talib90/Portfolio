@@ -1,0 +1,53 @@
+<mat-sidenav #sidenav class="example-sidenav" mode="side">
+  <mat-nav-list>
+    <a mat-list-item>
+      <span mat-line>Sign Up</span>
+    </a>
+
+    <a mat-list-item>
+      <span mat-line>login</span>
+    </a>
+  </mat-nav-list>
+</mat-sidenav>
+<mat-toolbar style="background: black; color:white;">
+  <button mat-icon-button (click)="sidenav.open()" fxHide="false" class="d-md-none">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="col col-lg-3 d-none d-sm-block"><button mat-button routerLink="/" class="mat-button">MarketPlace</button></span>
+  <form class="example-form" class="col-9 col-sm-6 col-md-6">
+    <div class="input-group">
+      <input type="text" class="form-control" [formControl]="myControl" [matAutocomplete]="auto" placeholder="Search">
+      <div class="input-group-append">
+          <span class="input-group-text" style="background: orangered; color:white; padding:0px;">
+              <button mat-button style="margin:0px;">
+                  <mat-icon>search</mat-icon>
+                 
+              </button>
+            </span> 
+        
+      </div>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
+  </form>
+  <span class="blank-grow"></span>
+
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <div class="d-none d-sm-block d-md-block">
+
+      <button mat-button>Sign Up</button>
+      |
+      <button mat-button class="">Login</button>
+      <button mat-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+    <div class="d-md-none d-sm-none"> <button mat-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button></div>
+
+  </div>
+</mat-toolbar>

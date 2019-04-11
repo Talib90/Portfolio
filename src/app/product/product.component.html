@@ -1,0 +1,45 @@
+<div *ngFor="let product of products" style="min-width: 1000px;">
+  <div *ngIf="product.id == data.id">
+    <div class="d-block" style="border:1px solid white;">
+      <button mat-button mat-dialog-close style="float:right;">X</button>
+    </div>
+    <div style="margin-top:40px;"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <ks-modal-gallery [id]="1" [modalImages]="images" [plainGalleryConfig]="plainGalleryRow"></ks-modal-gallery>
+          <br />
+          <div class="my-app-custom-plain-container-row">
+            <ng-container *ngFor="let img of images; let i = index">
+              <div *ngIf="i <= 4" style="text-align:center;">
+                <!-- 2 is a fixed value that I'm using to display only two images -->
+                <a class="more" *ngIf="i==4" (click)="openImageModalRow(img)"> +{{images.length - 4 - 1}} more </a>
+                <img *ngIf="img.plain && img.plain.img; else noThumb" class="my-app-custom-image-row" [src]="img.plain.img"
+                  (click)="openImageModalRow(img)" [alt]="img.modal.description" />
+                <ng-template #noThumb>
+                  <img class="my-app-custom-image-row" [src]="img.modal.img" (click)="openImageModalRow(img)" [alt]="img.modal.description" />
+                </ng-template>
+              </div>
+            </ng-container>
+          </div>
+          <ks-modal-gallery [id]="6" [modalImages]="images" [plainGalleryConfig]="customPlainGalleryRowConfig"></ks-modal-gallery>
+          <button mat-button class="col-12" style="background:orange; margin-top:5px; margin-bottom:5px; color:white;">Add
+            To Cart</button>
+          <button mat-button class="col-12" style="background:orangered; margin-top:5px; margin-bottom:5px; color:white;">Buy
+            Now</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+          <h4> {{ product.name }} </h4>
+          <div>RM {{ product.price }}</div>
+          <div class="col-12" style="background:orangered; padding:10px; color:white; margin-top:10px;">
+            <h5>PRODUCT DETAIL</h5>
+          </div>
+          <div class="col-12" style="margin-top:10px;">
+            detail of {{ product.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

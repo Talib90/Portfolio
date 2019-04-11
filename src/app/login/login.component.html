@@ -1,0 +1,36 @@
+<div class="d-block" style="border:1px solid white;">
+    <div class="d-inline-block h-sign-up">Login</div>
+    <div class="d-inline-block"style="float:right;"><button mat-button (click)="opensignup()">Sign Up</button></div>
+  </div>
+  <div style="margin-top:50px;"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div [ngClass]="signupclass" class="d-none d-md-block">
+        <img src="./assets/images/logo.png" class="offset-md-3 col-md-6">
+        <img src="./assets/images/marketplace.png" class="offset-md-2 col-md-8">
+      </div>
+      <div [ngClass]="signupclass">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Phone Number or Email</mat-label>
+          <input matInput placeholder="Username">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password">
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint style="color:red;">Forget Password</mat-hint>
+        </mat-form-field>
+        <div style="float:right; text-align: right; padding:0px; margin:0px;"  class="col-12">
+          <button mat-button mat-dialog-close style=" margin:5px;">Cancel</button>
+          <button mat-raised-button color="warn" style=" margin-top:5px;">Sign In</button>
+          <button mat-button class="col-12 btn-fb" style=" margin-top:5px;">
+            <fa-icon [icon]="['fab', 'facebook-f']"></fa-icon> FACEBOOK
+          </button>
+          <button mat-button class="col-12 btn-gplus" style=" margin-top:5px;">
+              <fa-icon [icon]="['fab', 'google-plus']"></fa-icon> GOOGLE +
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>

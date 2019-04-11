@@ -1,0 +1,93 @@
+<!-- Start : Carousel-->
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" alt="Random first slide" style="width: 100%;">
+    <div class="carousel-caption">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[1]" alt="Random second slide" style="width: 100%;">
+    <div class="carousel-caption">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[2]" alt="Random third slide" style="width: 100%;">
+    <div class="carousel-caption">
+    </div>
+  </ng-template>
+</ngb-carousel>
+<!-- End : Carousel-->
+
+<br /><br />
+
+<mat-card>
+  <!-- Start : Popular Item -->
+  <b>POPULAR ITEMS</b>
+  <mat-card>
+    <div class="container">
+      <div class="row">
+        <div [ngClass]="popularclass" *ngFor="let popularitem of popularitems">
+          <button mat-button class="popular_butoon">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <img [src]="popularitem.imagesrc" class="popular_img">
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="replyMessage"> {{popularitem.title}} </div>
+                  {{popularitem.total}} Product
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  <!-- End : Popular Item -->
+  <br /><br />
+  <!-- Start : Mall -->
+  <b>MARKETPLACE MALL</b>
+  <mat-card>
+    <div class="row">
+      <div style="float: left">
+        <button mat-button (click)="scrollLeft()" class="button-mall">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+      </div>
+
+      <div #widgetsContent class="middle">
+        <div class="info-widget" *ngFor="let mall of malls">
+          <button mat-button class="btn-shop">
+              <img [src]="mall.imagesrc" class="img_mall" title="mall.title">
+          </button>
+        </div>
+      </div>
+
+      <div style="float: right">
+        <button mat-button (click)="scrollRight()" class="button-mall" style="right:2px;">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+  <!-- End : Mall -->
+  <br /><br />
+  <!-- Start : Mall -->
+  <b>LET'S GO SHOPPING</b>
+  <div class="row">
+    <div class="col-6 col-sm-2" *ngFor="let product of products; let i = index" style="margin-bottom:20px;">
+      <mat-card class="no-padding">
+        <button mat-button class="btn-product" (mouseenter)="mouseHovering(i)" (mouseleave)="mouseLeft(i)">
+          <img [src]="product.imgUrl[0]" class="img_product" (click)="productDetail(product.id)">
+          <div class="title_product">{{ product.name }}</div>
+          <h5 style="color: orangered ; margin-bottom:0px;"> RM{{ product.price }} </h5>
+          <div style="margin:0px;">Selangor</div>
+          <button mat-button *ngIf="selectedIndex === i" [@enterAnimation] (click)="openSnackBar()" style="margin-bottom:10px; background: orangered; color:whitesmoke;">Add to Cart</button>
+        </button>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- End : Mall -->
+</mat-card>

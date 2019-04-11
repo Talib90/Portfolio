@@ -1,0 +1,24 @@
+.white-text{
+    color:whitesmoke;
+}
+.deep-purple{
+    background-color:orangered;
+}
+.page-footer{
+    color: #fff;
+    bottom: 0;
+}
+.unique-color-dark{
+    background-color:#1c2331;
+}
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    background-color: rgba(0,0,0,.2);
+    color: rgba(255,255,255,.6);
+}
+a{
+    color:whitesmoke;
+}
+a:hover{
+    text-decoration: none;
+}
